@@ -114,6 +114,7 @@ cd "${workdir}/align"
 
 r1=${workdir}/orig/${filebase%bam}sorted.r1.fq
 r2=${workdir}/orig/${filebase%bam}sorted.r2.fq
+
 echo \
     "$stardir/STAR \
     --genomeDir $genome \
@@ -143,6 +144,7 @@ echo \
     --twopassMode Basic \
     --outSAMmultNmax 1 \
         > ${logdir}/${tid}.${aid}.align.log 2>&1 && touch $donefile_aln"
+
 "${stardir}/STAR" \
     --genomeDir "$genome" \
     --readFilesIn "$r1" "$r2" \
