@@ -12,4 +12,19 @@ bam_files=
 outdir= 
 
 ### run spladder 
-python ${as_script} -b ${bam_files} -o $outdir -a ${anno} -v y -c 2 -M merge_graphs -T y -V y -n 50 -P y -p y --sparse_bam y -D 500 -t exon_skip,intron_retention,alt_3prime,alt_5prime,mutex_exons
+python \
+    "${as_script}" \
+    -b "${bam_files}" \
+    -o "${outdir}" \
+    -a "${anno}" \
+    -v y \
+    -c 2 \
+    -M merge_graphs \
+    -T y \
+    -V y \
+    -n 50 \
+    -P y \
+    -p y \
+    --sparse_bam y \
+    -D 500 \
+    -t exon_skip,intron_retention,alt_3prime,alt_5prime,mutex_exons
